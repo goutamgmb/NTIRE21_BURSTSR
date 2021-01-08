@@ -9,7 +9,7 @@ from datasets.zurich_raw2rgb_dataset import ZurichRAW2RGB
 
 
 def main():
-    zurich_raw2rgb = ZurichRAW2RGB(root='/media/goutam/T7/zurichraw2rgb/zurichraw2rgb', split='test')
+    zurich_raw2rgb = ZurichRAW2RGB(root='PATH_TO_ZURICH_RAW_TO_RGB', split='test')
     dataset = SyntheticBurst(zurich_raw2rgb, burst_size=3, crop_sz=256)
 
     data_loader = DataLoader(dataset, batch_size=2)
@@ -33,7 +33,6 @@ def main():
 
         print('PSNR is {:0.3f}'.format(score))
 
-        # Visualize input, ground truth
         meta_info = convert_dict(meta_info, burst.shape[0])
 
         # Apply simple post-processing to obtain RGB images
@@ -43,7 +42,8 @@ def main():
         pred_0 = cv2.cvtColor(pred_0, cv2.COLOR_RGB2BGR)
         gt_0 = cv2.cvtColor(gt_0, cv2.COLOR_RGB2BGR)
 
-        cv2.imshow('Pred', pred_0)
+        # Visualize input, ground truth
+        cv2.imshow('Input (Demosaicekd + Upsampled)', pred_0)
         cv2.imshow('GT', gt_0)
 
         input_key = cv2.waitKey(0)

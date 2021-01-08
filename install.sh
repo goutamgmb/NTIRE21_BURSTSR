@@ -16,4 +16,9 @@ conda install -c conda-forge cupy=7.8.0
 
 echo ""
 echo ""
+echo "****************** exifread ******************"
+pip install exifread
+
+echo ""
+echo ""
 echo "****************** Installation complete! ******************"

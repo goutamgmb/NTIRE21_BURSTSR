@@ -58,6 +58,10 @@ class SyntheticBurst(torch.utils.data.Dataset):
                           Note that the flow_vectors are in the LR RGB space, before mosaicking. Hence it has twice
                           the number of rows and columns, compared to the output burst.
 
+                          NOTE: The flow_vectors are only available during training for the purpose of using any
+                                auxiliary losses if needed. The flow_vectors will NOT be provided for the bursts in the
+                                test set
+
             meta_info: A dictionary containing the parameters used to generate the synthetic burst.
         """
         frame = self.base_dataset[index]
