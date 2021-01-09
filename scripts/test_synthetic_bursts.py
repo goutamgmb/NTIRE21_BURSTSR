@@ -1,6 +1,6 @@
 import torch.nn.functional as F
 import cv2
-from datasets.synthetic_burst_dataset import SyntheticBurst
+from datasets.synthetic_burst_train_set import SyntheticBurst
 from torch.utils.data.dataloader import DataLoader
 from utils.metrics import PSNR
 from utils.postprocessing_functions import SimplePostProcess
