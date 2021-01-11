@@ -1,4 +1,4 @@
-##Table of contents 
+## Table of contents 
 * [Introduction](#introduction)
 * [Dates](#dates)
 * [Description](#description)
@@ -77,7 +77,13 @@ linear sensor space, before post-processing steps such as color correction,
 white-balancing, gamma correction etc.
 
 
-### Validation/submission (codlab etc) (info on test will follow)
+### Submission
+**Validation set:** The results on the validation set can be uploaded on the [Codalab server]() 
+to obtain the performance measures, as well as a live leaderboard ranking. More details on
+the submission procedure will be provided soon.
+
+**Test set:** The details for the submission on the test set will be provided once the test
+data is released.
 
 ## Track 2 - Real-world
 This track deals with the problem of real-world burst super-resolution. For this purpose, 
@@ -117,7 +123,8 @@ goal is thus not to generate more pleasing images by modifying the output color 
 or generating artificial high frequency content not existing in the high-resolution 
 ground truth.
 
-### Validation/submission
+### Submission
+**Validation set:** 
 
 ## Toolkit
 We also provide a Python toolkit which includes the necessary data loading and 
