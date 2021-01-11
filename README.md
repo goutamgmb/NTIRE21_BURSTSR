@@ -1,6 +1,16 @@
-Table of contents 
+##Table of contents 
+* [Introduction](#introduction)
+* [Dates](#dates)
+* [Description](#description)
+* [Track 1 - Synthetic](#track-1---synthetic)
+* [Track 2 - Real-world](#track-2---real-world)
+* [Toolkit](#toolkit)
+* [Issues and Questions](#issues-and-questions)
+* [Organizers](#organizers)
+* [Terms and conditions](#terms-and-conditions)
+* [Acknowledgements](#acknowledgements)
 
-# Introduction
+## Introduction
 Burst Image Super-Resolution Challenge will be held as part of the [6th edition of 
 NTIRE: New Trends in Image Restoration and Enhancement](https://data.vision.ee.ethz.ch/cvl/ntire21/) workshop to be held in conjunction 
 with [CVPR 2021](http://cvpr2021.thecvf.com/). The task of this challenge is to generate 
