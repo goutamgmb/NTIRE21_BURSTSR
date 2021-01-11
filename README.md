@@ -1,6 +1,6 @@
 Table of contents 
 
-#Introduction
+# Introduction
 Burst Image Super-Resolution Challenge will be held as part of the [6th edition of 
 NTIRE: New Trends in Image Restoration and Enhancement](https://data.vision.ee.ethz.ch/cvl/ntire21/) workshop to be held in conjunction 
 with [CVPR 2021](http://cvpr2021.thecvf.com/). The task of this challenge is to generate 
@@ -11,7 +11,7 @@ participants are invited to submit a paper describing their solution to the asso
 NTIRE workshop at CVPR 2021
 
 
-##Dates
+## Dates
 * 2021.01.11 Release of train and validation data  
 * 2021.01.15 Validation server online  
 * 2021.03.01 Final test data release (inputs only)  
@@ -21,7 +21,7 @@ NTIRE workshop at CVPR 2021
 * 2021.03.28 Paper submission deadline for entries from the challenge  
 * 2021.06.15 NTIRE workshop and challenges, results and award ceremony (CVPR 2021, Online)  
 
-##Description
+## Description
 Given multiple noisy RAW images of a scene, the task in burst super-resolution is to 
 predict a denoised higher-resolution RGB image by combining information from the 
 multiple input frames. Concretely, the method will be provided a burst sequence 
@@ -38,7 +38,7 @@ not to artificially generate a plausible, visually pleasing image.
 
 
 
-##Track 1 - Synthetic
+## Track 1 - Synthetic
 In the synthetic track, the input bursts are generated from RGB images using a synthetic 
 data generation pipeline. 
 
@@ -58,7 +58,7 @@ using the RGB images from the test split of the
 [Zurich RAW to RGB dataset](http://people.ee.ethz.ch/~ihnatova/pynet.html#dataset). 
 
 
-###Evaluation
+### Evaluation
 The methods will be ranked using the fidelity (in terms of PSNR) with the high-resolution 
 ground truth, i.e. the linear sensor space image used to generate the burst. The focus of 
 the challenge is on learning to reconstruct the original high-resolution image, and not 
@@ -67,9 +67,9 @@ linear sensor space, before post-processing steps such as color correction,
 white-balancing, gamma correction etc.
 
 
-###Validation/submission (codlab etc) (info on test will follow)
+### Validation/submission (codlab etc) (info on test will follow)
 
-##Track 2 - Real-world
+## Track 2 - Real-world
 This track deals with the problem of real-world burst super-resolution. For this purpose, 
 we introduce a new dataset BurstSR consisting of real-world bursts.
 
@@ -87,7 +87,7 @@ as well as color mis-match between the images. Thus, in addition to designing ne
 architectures, developing effective training strategies to utilize mis-aligned training 
 data is a key challenge in this track.
 
-###Evaluation
+### Evaluation
 Due to the spatial and color mis-alignments between the input burst and the ground truth, 
 it is difficult to estimate similarity between the network prediction and the ground 
 truth. We introduce **AlignedPSNR** metric for this purpose. A user study will also be conducted as a complement to 
@@ -107,9 +107,9 @@ goal is thus not to generate more pleasing images by modifying the output color 
 or generating artificial high frequency content not existing in the high-resolution 
 ground truth.
 
-###Validation/submission
+### Validation/submission
 
-##Toolkit
+## Toolkit
 We also provide a Python toolkit which includes the necessary data loading and 
 evaluation scripts. The toolkit contains the following modules.
 
@@ -137,7 +137,7 @@ for track 1, and additionally [exifread](https://pypi.org/project/ExifRead/) and
 [anaconda](https://www.anaconda.com/), using the [install.sh](install.sh) script. 
 
 
-##Data
+## Data
 We provide the following data as part of the challenge. 
 
 **Synthetic validation set:** The official validation set for track 1. The synthetic bursts are generated from the RGB images from the test split of the Zurich RAW to RGB mapping dataset. 
@@ -153,15 +153,15 @@ are available [here](burstsr_links.md).
 can be downloaded from [here](). These RGB images can be 
 used to generate synthetic bursts for training using  the SyntheticBurst class.
 
-##Issues and questions: 
+## Issues and questions: 
 In case of any questions about the challenge or the toolkit, feel free to open an issue on Github.
 
-##Organizers
+## Organizers
 * [Goutam Bhat](https://goutamgmb.github.io/) (goutam.bhat@vision.ee.ethz.ch)
 * [Martin Danelljan](https://martin-danelljan.github.io/) (martin.danelljan@vision.ee.ethz.ch)
 * [Radu Timofte](http://people.ee.ethz.ch/~timofter/) (radu.timofte@vision.ee.ethz.ch)
 
-##Terms and conditions
+## Terms and conditions
 The terms and conditions for participating in the challenge are provided [here](terms_and_conditions.md)
 
 

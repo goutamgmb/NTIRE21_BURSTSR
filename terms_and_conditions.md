@@ -1,4 +1,4 @@
-#Burst Image Super-Resolution Challenge
+# Burst Image Super-Resolution Challenge
 These are the official rules (terms and conditions) that govern how the 
 NTIRE 2021 challenge on Burst Image Super-Resolution will operate. This challenge will 
 be simply referred to as the "challenge" or the "contest" throughout the remaining part 
@@ -18,7 +18,7 @@ to send an email to the organizers such that to be removed from all the records.
 Once the contest is over no change is possible in the status of the registered 
 participants and their entries.
 
-##1. Contest description
+## 1. Contest description
 This is a skill-based contest and chance plays no part in the determination of the 
 winner (s).
 
@@ -40,13 +40,13 @@ The winners will be determined according to their entries, the reproducibility o
 the results and uploaded codes or executables, and the above mentioned criteria as 
 judged by the organizers.
 
-##2. Tentative contest schedule
+## 2. Tentative contest schedule
 The registered participants will be notified by email if any changes are made to the 
 schedule. The schedule is available on the [NTIRE workshop web page](https://data.vision.ee.ethz.ch/cvl/ntire21/) 
 and on the 
 official GitHub [repository]().
 
-##3. Eligibility
+## 3. Eligibility
 You are eligible to register and compete in this contest only if you meet all the 
 following requirements:
 
@@ -78,7 +78,7 @@ We will have 3 categories of entries in the final test ranking:
 
  
 
-##4. Entry
+## 4. Entry
 In order to be eligible for judging, an entry must meet all the following requirements:
 
 **Entry contents**: the participants are required to submit image results and code or 
