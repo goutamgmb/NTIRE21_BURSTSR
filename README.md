@@ -79,8 +79,10 @@ white-balancing, gamma correction etc.
 
 ### Submission
 **Validation set:** The results on the validation set can be uploaded on the [Codalab server]() 
-to obtain the performance measures, as well as a live leaderboard ranking. More details on
-the submission procedure will be provided soon.
+to obtain the performance measures, as well as a live leaderboard ranking. The results should be uploaded as a ZIP file
+containing the network predictions for each burst. The predictions must be normalized to the range [0, 2^14] and saved
+as 16 bit (uint16) png files. Please refer to [save_results_synburst_val.py](scripts/save_results_synburst_val.py) for
+an example on how to save the results. An example submission file is available [here](https://data.vision.ee.ethz.ch/bhatg/syn_burst_example_submission.zip).
 
 **Test set:** The details for the submission on the test set will be provided once the test
 data is released.
@@ -95,7 +97,7 @@ dataset will be made available soon). Each burst sequence contains 14 RAW images
 captured using a handheld smartphone camera. For each burst sequence, we also capture 
 a high-resolution image using a DSLR camera mounted on a tripod to serve as ground truth. 
 We extract 160x160 crops from the bursts to obtain a training set consisting of
---- crops, and a validation set consisting of --- crops. 
+5405 crops, and a validation set consisting of 882 crops. 
 
 **Challenges:** Since the burst and ground 
 truth images are captured using different cameras, there exists a spatial mis-alignment, 
@@ -124,7 +126,14 @@ or generating artificial high frequency content not existing in the high-resolut
 ground truth.
 
 ### Submission
-**Validation set:** 
+**Validation set:** The will be no evaluation server for Track 2. Instead, the ground 
+truth images for the validation set are provided and the methods can be evaluated locally 
+using the provided implementation of [AlignedPSNR](utils/metrics.py). Please refer to 
+[evaluate_burstsr_val.py](scripts/evaluate_burstsr_val.py) script for an example on 
+how to evaluate on BurstSR validation set. 
+
+**Test set:** The details for the submission on the test set will be provided once the test
+data is released.
 
 ## Toolkit
 We also provide a Python toolkit which includes the necessary data loading and 
@@ -142,10 +151,20 @@ evaluation scripts. The toolkit contains the following modules.
       the pre-generated synthetic validation set.
     * [burstsr_dataset](datasets/burstsr_dataset.py) provides the BurstSRDataset class which can be used to load the RAW bursts and high-resolution ground truths for the real-world track.
 * [pwcnet](pwcnet): The code for the optical flow network [PWC-Net](https://arxiv.org/abs/1811.11127) 
-  borrowed from [pytorch-pwc](https://github.com/sniklaus/pytorch-pwc).
-* [scripts](scripts): Includes example scripts for using the SyntheticBurst and 
-  BurstSRDataset datasets, as well as the AlignedPSNR metric. 
-  Additionally, it also includes a script to download and unpack the BurstSR dataset.
+  borrowed from [pytorch-pwc](https://github.com/sniklaus/pytorch-pwc). The network weights can be 
+  downloaded from [here](https://data.vision.ee.ethz.ch/bhatg/pwcnet-network-default.pth).
+* [scripts](scripts): Includes useful example scripts.
+    * [download_burstsr_dataset](scripts/download_burstsr_dataset.py) can be used to 
+      download and unpack the BurstSR dataset.
+    * [test_synthetic_burst](scripts/test_synthetic_bursts.py) provides an example on how
+  to use the [SyntheticBurst](datasets/synthetic_burst_train_set.py) dataset.
+    * [test_burstsr_dataset](scripts/test_burstsr_dataset.py) provides an example on how
+  to use the [BurstSR](datasets/burstsr_dataset.py) dataset.
+    * [save_results_synburst_val](scripts/save_results_synburst_val.py) provides an example
+      on how to save the results on [SyntheticBurstVal](datasets/synthetic_burst_val_set.py) 
+      dataset for submission on the evaluation server.
+    * [evaluate_burstsr_val](scripts/evaluate_burstsr_val.py) provides an example on how
+      to evaluate a method on the [BurstSR](datasets/burstsr_dataset.py) validation set.
 * [utils](utils): Contains the [AlignedPSNR](utils/metrics.py) metric, as well as other utility functions.
 
 **Installation:** The toolkit requires [PyTorch](https://pytorch.org/) and [OpenCV](https://opencv.org/) 
@@ -157,18 +176,22 @@ for track 1, and additionally [exifread](https://pypi.org/project/ExifRead/) and
 ## Data
 We provide the following data as part of the challenge. 
 
-**Synthetic validation set:** The official validation set for track 1. The synthetic bursts are generated from the RGB images from the test split of the Zurich RAW to RGB mapping dataset. 
-The dataset can be downloaded from [here]().
+**Synthetic validation set:** The official validation set for track 1. The dataset contains 300 synthetic bursts, each containing 
+14 RAW images. The synthetic bursts are generated from the RGB images from the test split of the Zurich RAW to RGB mapping dataset. 
+The dataset can be downloaded from [here](https://data.vision.ee.ethz.ch/bhatg/syn_burst_val.zip).
 
 **BurstSR train and validation set:** The training and validation set for track 2. 
 The dataset has been split into 10 parts and can be downloaded and unpacked using the 
-[download_burstsr_dataset](scripts/download_burstsr_dataset.py) script. In case of issues with the script, the download links 
+[download_burstsr_dataset.py](scripts/download_burstsr_dataset.py) script. In case of issues with the script, the download links 
 are available [here](burstsr_links.md).
 
 **Zurich RAW to RGB mapping set:** The RGB images from the training split of the 
 [Zurich RAW to RGB mapping dataset](http://people.ee.ethz.ch/~ihnatova/pynet.html#dataset) 
-can be downloaded from [here](). These RGB images can be 
+can be downloaded from [here](https://data.vision.ee.ethz.ch/bhatg/zurich-raw-to-rgb.zip). These RGB images can be 
 used to generate synthetic bursts for training using  the SyntheticBurst class.
+
+Additionally, the weights for the [PWC-Net](https://arxiv.org/abs/1811.11127) network used 
+in the evaluation for Track 2 can be downloaded from [here](https://data.vision.ee.ethz.ch/bhatg/pwcnet-network-default.pth).
 
 ## Issues and questions: 
 In case of any questions about the challenge or the toolkit, feel free to open an issue on Github.

@@ -9,7 +9,7 @@ class SyntheticBurstVal(torch.utils.data.Dataset):
     """
     def __init__(self, root):
         self.root = root
-        self.burst_list = list(range(1204))
+        self.burst_list = list(range(300))
         self.burst_size = 14
 
     def __len__(self):
@@ -29,8 +29,10 @@ class SyntheticBurstVal(torch.utils.data.Dataset):
                     burst: LR RAW burst, a torch tensor of shape
                            [14, 4, 48, 48]
                            The 4 channels correspond to 'R', 'G', 'G', and 'B' values in the RGGB bayer mosaick.
+                    seq_name: Name of the burst sequence
                 """
+        burst_name = '{:04d}'.format(index)
         burst = [self._read_burst_image(index, i) for i in range(self.burst_size)]
         burst = torch.stack(burst, 0)
 
-        return burst
+        return burst, burst_name
