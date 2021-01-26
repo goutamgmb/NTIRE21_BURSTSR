@@ -74,7 +74,7 @@ using the RGB images from the test split of the
 
 ### Registration
 If you wish to participate in the Synthetic track, please register for the challenge at the 
-[codalab page](https://competitions.codalab.org/competitions/28078) to get access to the evaluation server and receive email notifications for 
+[codalab page](https://competitions.codalab.org/competitions/28078#participate) to get access to the evaluation server and receive email notifications for 
 the challenge.
 
 ### Evaluation
@@ -117,7 +117,7 @@ data is a key challenge in this track.
 
 ### Registration
 If you wish to participate in the Real-world track, please register for the challenge at the 
-[codalab page](https://competitions.codalab.org/competitions/28079) to receive email notifications for 
+[codalab page](https://competitions.codalab.org/competitions/28079#participate) to receive email notifications for 
 the challenge.
 
 ### Evaluation
