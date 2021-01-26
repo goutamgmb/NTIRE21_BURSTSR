@@ -135,6 +135,7 @@ how to evaluate on BurstSR validation set.
 **Test set:** The details for the submission on the test set will be provided once the test
 data is released.
 
+
 ## Toolkit
 We also provide a Python toolkit which includes the necessary data loading and 
 evaluation scripts. The toolkit contains the following modules.
@@ -192,6 +193,11 @@ used to generate synthetic bursts for training using  the SyntheticBurst class.
 
 Additionally, the weights for the [PWC-Net](https://arxiv.org/abs/1811.11127) network used 
 in the evaluation for Track 2 can be downloaded from [here](https://data.vision.ee.ethz.ch/bhatg/pwcnet-network-default.pth).
+
+## Reference
+A detailed description of the BurstSR dataset and the AlignedPSNR metric is available in the 
+paper "Deep Burst Super-Resolution" (link will be posted soon). The paper also presents a 
+solution for burst super-resolution, which can be used as a reference.
 
 ## Issues and questions: 
 In case of any questions about the challenge or the toolkit, feel free to open an issue on Github.
