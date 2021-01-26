@@ -22,8 +22,8 @@ NTIRE workshop at CVPR 2021
 
 
 ## Dates
-* 2021.01.11 Release of train and validation data  
-* 2021.01.15 Validation server online  
+* 2021.01.26 Release of train and validation data  
+* 2021.02.01 Validation server online  
 * 2021.03.01 Final test data release (inputs only)  
 * 2021.03.08 Test output results submission deadline  
 * 2021.03.09 Fact sheets and code/executable submission deadline  
