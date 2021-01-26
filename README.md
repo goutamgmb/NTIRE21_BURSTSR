@@ -5,7 +5,6 @@
 * [Track 1 - Synthetic](#track-1---synthetic)
 * [Track 2 - Real-world](#track-2---real-world)
 * [Toolkit](#toolkit)
-* [Reference](#reference) 
 * [Issues and Questions](#issues-and-questions)
 * [Organizers](#organizers)
 * [Terms and conditions](#terms-and-conditions)
@@ -21,6 +20,10 @@ The challenge uses a new dataset and has 2 tracks, namely **Track 1: Synthetic**
 participants are invited to submit a paper describing their solution to the associated 
 NTIRE workshop at CVPR 2021
 
+A detailed description of the dataset used in the challenge, as well as a reference 
+solution for burst super-resolution is available in the 
+paper "Deep Burst Super-Resolution" (link will be posted soon). 
+
 
 ## Dates
 * 2021.01.26 Release of train and validation data  
@@ -31,6 +34,7 @@ NTIRE workshop at CVPR 2021
 * 2021.03.11 Preliminary test results released to the participants  
 * 2021.03.28 Paper submission deadline for entries from the challenge  
 * 2021.06.15 NTIRE workshop and challenges, results and award ceremony (CVPR 2021, Online)  
+
 
 ## Description
 Given multiple noisy RAW images of a scene, the task in burst super-resolution is to 
@@ -68,6 +72,10 @@ pre-generated with the [data generation code](datasets/synthetic_burst_train_set
 using the RGB images from the test split of the 
 [Zurich RAW to RGB dataset](http://people.ee.ethz.ch/~ihnatova/pynet.html#dataset). 
 
+### Registration
+If you wish to participate in the Synthetic track, please register for the challenge at the 
+[codalab page](https://competitions.codalab.org/competitions/28078) to get access to the evaluation server and receive email notifications for 
+the challenge.
 
 ### Evaluation
 The methods will be ranked using the fidelity (in terms of PSNR) with the high-resolution 
@@ -79,7 +87,7 @@ white-balancing, gamma correction etc.
 
 
 ### Submission
-**Validation set:** The results on the validation set can be uploaded on the [Codalab server]() 
+**Validation set:** The results on the validation set can be uploaded on the [Codalab server](https://competitions.codalab.org/competitions/28078#participate) (live on 2021.02.01)
 to obtain the performance measures, as well as a live leaderboard ranking. The results should be uploaded as a ZIP file
 containing the network predictions for each burst. The predictions must be normalized to the range [0, 2^14] and saved
 as 16 bit (uint16) png files. Please refer to [save_results_synburst_val.py](scripts/save_results_synburst_val.py) for
@@ -98,13 +106,19 @@ dataset will be made available soon). Each burst sequence contains 14 RAW images
 captured using a handheld smartphone camera. For each burst sequence, we also capture 
 a high-resolution image using a DSLR camera mounted on a tripod to serve as ground truth. 
 We extract 160x160 crops from the bursts to obtain a training set consisting of
-5405 crops, and a validation set consisting of 882 crops. 
+5405 crops, and a validation set consisting of 882 crops. A detailed description of the 
+BurstSR dataset is available in the paper "Deep Burst Super-Resolution" (link will be posted soon). 
 
 **Challenges:** Since the burst and ground 
 truth images are captured using different cameras, there exists a spatial mis-alignment, 
 as well as color mis-match between the images. Thus, in addition to designing network 
 architectures, developing effective training strategies to utilize mis-aligned training 
 data is a key challenge in this track.
+
+### Registration
+If you wish to participate in the Real-world track, please register for the challenge at the 
+[codalab page](https://competitions.codalab.org/competitions/28079) to receive email notifications for 
+the challenge.
 
 ### Evaluation
 Due to the spatial and color mis-alignments between the input burst and the ground truth, 
@@ -118,7 +132,8 @@ estimated using [PWC-Net](https://arxiv.org/abs/1709.02371). A linear color mapp
 truth, modeled as a 3x3 color correction matrix, is then estimated and used to transform 
 the spatially aligned network prediction to the same color space as the ground truth. 
 Finally, PSNR is computed between the spatially aligned and color corrected network 
-prediction and the ground truth. 
+prediction and the ground truth. More description of the AlignedPSNR metric is available in 
+the paper "Deep Burst Super-Resolution" (link will be posted soon). 
 
 **User study:** The emphasis of the user study 
 will be on which method can best reconstruct the **original** high-frequency details. The 
@@ -194,11 +209,6 @@ used to generate synthetic bursts for training using  the SyntheticBurst class.
 
 Additionally, the weights for the [PWC-Net](https://arxiv.org/abs/1811.11127) network used 
 in the evaluation for Track 2 can be downloaded from [here](https://data.vision.ee.ethz.ch/bhatg/pwcnet-network-default.pth).
-
-## Reference
-A detailed description of the BurstSR dataset and the AlignedPSNR metric is available in the 
-paper "Deep Burst Super-Resolution" (link will be posted soon). The paper also presents a 
-solution for burst super-resolution, which can be used as a reference.
 
 ## Issues and questions: 
 In case of any questions about the challenge or the toolkit, feel free to open an issue on Github.
