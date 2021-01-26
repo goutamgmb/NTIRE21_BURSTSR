@@ -86,15 +86,23 @@ linear sensor space, before post-processing steps such as color correction,
 white-balancing, gamma correction etc.
 
 
-### Submission
-**Validation set:** The results on the validation set can be uploaded on the [Codalab server](https://competitions.codalab.org/competitions/28078#participate) (live on 2021.02.01)
+### Validation
+
+The results on the **validation set** can be uploaded on the [Codalab server](https://competitions.codalab.org/competitions/28078#participate) (live on 2021.02.01)
 to obtain the performance measures, as well as a live leaderboard ranking. The results should be uploaded as a ZIP file
 containing the network predictions for each burst. The predictions must be normalized to the range [0, 2^14] and saved
 as 16 bit (uint16) png files. Please refer to [save_results_synburst_val.py](scripts/save_results_synburst_val.py) for
 an example on how to save the results. An example submission file is available [here](https://data.vision.ee.ethz.ch/bhatg/syn_burst_example_submission.zip).
 
-**Test set:** The details for the submission on the test set will be provided once the test
-data is released.
+### Final Submission
+
+Final submission to the challenge we be done using the **test set**, which will be released at the start of the test phase. Participants will be asked to submit:
+
+* Predictions on the test set.
+* Code.
+* A fact sheet describing their method.
+
+Details will follow when the test phase starts ...
 
 ## Track 2 - Real-world
 This track deals with the problem of real-world burst super-resolution. For this purpose, 
@@ -141,15 +149,24 @@ goal is thus not to generate more pleasing images by modifying the output color 
 or generating artificial high frequency content not existing in the high-resolution 
 ground truth.
 
-### Submission
-**Validation set:** The will be no evaluation server for Track 2. Instead, the ground 
-truth images for the validation set are provided and the methods can be evaluated locally 
+
+### Validation
+
+The will be no evaluation server for Track 2. Instead, the ground 
+truth images for the **validation set** are provided and the methods can be evaluated locally 
 using the provided implementation of [AlignedPSNR](utils/metrics.py). Please refer to 
 [evaluate_burstsr_val.py](scripts/evaluate_burstsr_val.py) script for an example on 
 how to evaluate on BurstSR validation set. 
 
-**Test set:** The details for the submission on the test set will be provided once the test
-data is released.
+### Final Submission
+
+Final submission to the challenge we be done using the **test set**, which will be released at the start of the test phase. Participants will be asked to submit:
+
+* Predictions on the test set.
+* Code.
+* A fact sheet describing their method.
+
+Details will follow when the test phase starts ...
 
 
 ## Toolkit
