@@ -115,7 +115,8 @@ captured using a handheld smartphone camera. For each burst sequence, we also ca
 a high-resolution image using a DSLR camera mounted on a tripod to serve as ground truth. 
 We extract 160x160 crops from the bursts to obtain a training set consisting of
 5405 crops, and a validation set consisting of 882 crops. A detailed description of the 
-BurstSR dataset is available in the paper "Deep Burst Super-Resolution" (link will be posted soon). 
+BurstSR dataset is available in the paper ["Deep Burst Super-Resolution"](https://arxiv.org/pdf/2101.10997.pdf). 
+Please cite the [paper](https://arxiv.org/pdf/2101.10997.pdf) if you use the BurstSR dataset in your work. 
 
 **Challenges:** Since the burst and ground 
 truth images are captured using different cameras, there exists a spatial mis-alignment, 
@@ -141,7 +142,7 @@ truth, modeled as a 3x3 color correction matrix, is then estimated and used to t
 the spatially aligned network prediction to the same color space as the ground truth. 
 Finally, PSNR is computed between the spatially aligned and color corrected network 
 prediction and the ground truth. More description of the AlignedPSNR metric is available in 
-the paper "Deep Burst Super-Resolution" (link will be posted soon). 
+the paper ["Deep Burst Super-Resolution"](https://arxiv.org/pdf/2101.10997.pdf). 
 
 **User study:** The emphasis of the user study 
 will be on which method can best reconstruct the **original** high-frequency details. The 
