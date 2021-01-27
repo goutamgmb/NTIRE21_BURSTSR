@@ -22,7 +22,7 @@ NTIRE workshop at CVPR 2021
 
 A detailed description of the dataset used in the challenge, as well as a reference 
 solution for burst super-resolution is available in the 
-paper "Deep Burst Super-Resolution" (link will be posted soon). 
+paper [Deep Burst Super-Resolution](https://arxiv.org/abs/2101.10997). 
 
 
 ## Dates
