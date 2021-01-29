@@ -1,5 +1,6 @@
 ## Table of contents 
 * [Introduction](#introduction)
+* [Reference](#reference)
 * [Dates](#dates)
 * [Description](#description)
 * [Track 1 - Synthetic](#track-1---synthetic)
@@ -20,9 +21,15 @@ The challenge uses a new dataset and has 2 tracks, namely **Track 1: Synthetic**
 participants are invited to submit a paper describing their solution to the associated 
 NTIRE workshop at CVPR 2021
 
-A detailed description of the dataset used in the challenge, as well as a reference 
-solution for burst super-resolution is available in the 
-paper [Deep Burst Super-Resolution](https://arxiv.org/abs/2101.10997). 
+## Reference
+
+The provided **BurstSR dataset**, **code**, and evaluation protocol for this challenge was introduced in our following paper. Please cite it if you use any of these in your work.
+Our paper also introduces a new method for Deep Burst Super-Resolution, which you can use as a baseline solution.
+
+*Deep Burst Super-Resolution*  
+Goutam Bhat, Martin Danelljan, Luc Van Gool, Radu Timofte  
+arXiv:2101.10997  
+[[paper](https://arxiv.org/abs/2101.10997)]
 
 
 ## Dates
