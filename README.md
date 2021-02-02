@@ -95,7 +95,7 @@ white-balancing, gamma correction etc.
 
 ### Validation
 
-The results on the **validation set** can be uploaded on the [Codalab server](https://competitions.codalab.org/competitions/28078#participate) (live on 2021.02.01)
+The results on the **validation set** can be uploaded on the [Codalab server](https://competitions.codalab.org/competitions/28078#participate) (**live now**)
 to obtain the performance measures, as well as a live leaderboard ranking. The results should be uploaded as a ZIP file
 containing the network predictions for each burst. The predictions must be normalized to the range [0, 2^14] and saved
 as 16 bit (uint16) png files. Please refer to [save_results_synburst_val.py](scripts/save_results_synburst_val.py) for
