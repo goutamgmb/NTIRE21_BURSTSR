@@ -151,6 +151,8 @@ Finally, PSNR is computed between the spatially aligned and color corrected netw
 prediction and the ground truth. More description of the AlignedPSNR metric is available in 
 the paper ["Deep Burst Super-Resolution"](https://arxiv.org/pdf/2101.10997.pdf). 
 
+
+
 **User study:** The emphasis of the user study 
 will be on which method can best reconstruct the **original** high-frequency details. The 
 goal is thus not to generate more pleasing images by modifying the output color space 
@@ -165,6 +167,9 @@ truth images for the **validation set** are provided and the methods can be eval
 using the provided implementation of [AlignedPSNR](utils/metrics.py). Please refer to 
 [evaluate_burstsr_val.py](scripts/evaluate_burstsr_val.py) script for an example on 
 how to evaluate on BurstSR validation set. 
+
+NOTE: The [evaluate_burstsr_val.py](scripts/evaluate_burstsr_val.py) script computes the AlignedPSNR score in the linear sensor space, before white-balancing or any intensity scaling. Since the RAW sensor values in the captured bursts are generally small (mean of around 0.1 - 0.2), the computed PSNR values are generally very high (> 47), since the maximum signal value in the PSNR computation is still assumed to be 1.0. In the ["Deep Burst Super-Resolution"](https://arxiv.org/pdf/2101.10997.pdf) paper, we computed the final scores on the white-balanced image, after scaling the image intensities to be between [0, 1]. Thus the scores computed by [evaluate_burstsr_val.py](scripts/evaluate_burstsr_val.py) cannot be compared with the scores reported in the paper.
+
 
 ### Final Submission
 
