@@ -35,11 +35,11 @@ arXiv:2101.10997
 ## Dates
 * 2021.01.26 Release of train and validation data  
 * 2021.02.01 Validation server online  
-* 2021.03.01 Final test data release (inputs only)  
-* 2021.03.08 Test output results submission deadline  
-* 2021.03.09 Fact sheets and code/executable submission deadline  
-* 2021.03.11 Preliminary test results released to the participants  
-* 2021.03.28 Paper submission deadline for entries from the challenge  
+* 2021.03.15 Final test data release (inputs only)  
+* 2021.03.20 Test output results submission deadline  
+* 2021.03.20 Fact sheets and code/executable submission deadline  
+* 2021.03.22 Preliminary test results released to the participants  
+* 2021.04.02 Paper submission deadline for entries from the challenge  
 * 2021.06.15 NTIRE workshop and challenges, results and award ceremony (CVPR 2021, Online)  
 
 
