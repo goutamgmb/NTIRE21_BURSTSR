@@ -1,5 +1,6 @@
 ## Table of contents 
 * [Introduction](#introduction)
+* [Reference](#reference)
 * [Dates](#dates)
 * [Description](#description)
 * [Track 1 - Synthetic](#track-1---synthetic)
@@ -20,19 +21,25 @@ The challenge uses a new dataset and has 2 tracks, namely **Track 1: Synthetic**
 participants are invited to submit a paper describing their solution to the associated 
 NTIRE workshop at CVPR 2021
 
-A detailed description of the dataset used in the challenge, as well as a reference 
-solution for burst super-resolution is available in the 
-paper "Deep Burst Super-Resolution" (link will be posted soon). 
+## Reference
+
+The provided **BurstSR dataset**, **code**, and evaluation protocol for this challenge was introduced in our following paper. Please cite it if you use any of these in your work.
+Our paper also introduces a new method for Deep Burst Super-Resolution, which you can use as a baseline solution.
+
+*Deep Burst Super-Resolution*  
+Goutam Bhat, Martin Danelljan, Luc Van Gool, Radu Timofte  
+arXiv:2101.10997  
+[[paper](https://arxiv.org/abs/2101.10997)]
 
 
 ## Dates
 * 2021.01.26 Release of train and validation data  
 * 2021.02.01 Validation server online  
-* 2021.03.01 Final test data release (inputs only)  
-* 2021.03.08 Test output results submission deadline  
-* 2021.03.09 Fact sheets and code/executable submission deadline  
-* 2021.03.11 Preliminary test results released to the participants  
-* 2021.03.28 Paper submission deadline for entries from the challenge  
+* 2021.03.15 Final test data release (inputs only)  
+* 2021.03.20 Test output results submission deadline  
+* 2021.03.20 Fact sheets and code/executable submission deadline  
+* 2021.03.22 Preliminary test results released to the participants  
+* 2021.04.02 Paper submission deadline for entries from the challenge  
 * 2021.06.15 NTIRE workshop and challenges, results and award ceremony (CVPR 2021, Online)  
 
 
@@ -86,15 +93,23 @@ linear sensor space, before post-processing steps such as color correction,
 white-balancing, gamma correction etc.
 
 
-### Submission
-**Validation set:** The results on the validation set can be uploaded on the [Codalab server](https://competitions.codalab.org/competitions/28078#participate) (live on 2021.02.01)
+### Validation
+
+The results on the **validation set** can be uploaded on the [Codalab server](https://competitions.codalab.org/competitions/28078#participate) (**live now**)
 to obtain the performance measures, as well as a live leaderboard ranking. The results should be uploaded as a ZIP file
 containing the network predictions for each burst. The predictions must be normalized to the range [0, 2^14] and saved
 as 16 bit (uint16) png files. Please refer to [save_results_synburst_val.py](scripts/save_results_synburst_val.py) for
 an example on how to save the results. An example submission file is available [here](https://data.vision.ee.ethz.ch/bhatg/syn_burst_example_submission.zip).
 
-**Test set:** The details for the submission on the test set will be provided once the test
-data is released.
+### Final Submission
+
+Final submission to the challenge we be done using the **test set**, which will be released at the start of the test phase. Participants will be asked to submit:
+
+* Predictions on the test set.
+* Code.
+* A fact sheet describing their method.
+
+Details will follow when the test phase starts ...
 
 ## Track 2 - Real-world
 This track deals with the problem of real-world burst super-resolution. For this purpose, 
@@ -107,7 +122,8 @@ captured using a handheld smartphone camera. For each burst sequence, we also ca
 a high-resolution image using a DSLR camera mounted on a tripod to serve as ground truth. 
 We extract 160x160 crops from the bursts to obtain a training set consisting of
 5405 crops, and a validation set consisting of 882 crops. A detailed description of the 
-BurstSR dataset is available in the paper "Deep Burst Super-Resolution" (link will be posted soon). 
+BurstSR dataset is available in the paper ["Deep Burst Super-Resolution"](https://arxiv.org/pdf/2101.10997.pdf). 
+Please cite the [paper](https://arxiv.org/pdf/2101.10997.pdf) if you use the BurstSR dataset in your work. 
 
 **Challenges:** Since the burst and ground 
 truth images are captured using different cameras, there exists a spatial mis-alignment, 
@@ -133,7 +149,9 @@ truth, modeled as a 3x3 color correction matrix, is then estimated and used to t
 the spatially aligned network prediction to the same color space as the ground truth. 
 Finally, PSNR is computed between the spatially aligned and color corrected network 
 prediction and the ground truth. More description of the AlignedPSNR metric is available in 
-the paper "Deep Burst Super-Resolution" (link will be posted soon). 
+the paper ["Deep Burst Super-Resolution"](https://arxiv.org/pdf/2101.10997.pdf). 
+
+
 
 **User study:** The emphasis of the user study 
 will be on which method can best reconstruct the **original** high-frequency details. The 
@@ -141,15 +159,27 @@ goal is thus not to generate more pleasing images by modifying the output color 
 or generating artificial high frequency content not existing in the high-resolution 
 ground truth.
 
-### Submission
-**Validation set:** The will be no evaluation server for Track 2. Instead, the ground 
-truth images for the validation set are provided and the methods can be evaluated locally 
+
+### Validation
+
+The will be no evaluation server for Track 2. Instead, the ground 
+truth images for the **validation set** are provided and the methods can be evaluated locally 
 using the provided implementation of [AlignedPSNR](utils/metrics.py). Please refer to 
 [evaluate_burstsr_val.py](scripts/evaluate_burstsr_val.py) script for an example on 
 how to evaluate on BurstSR validation set. 
 
-**Test set:** The details for the submission on the test set will be provided once the test
-data is released.
+NOTE: The [evaluate_burstsr_val.py](scripts/evaluate_burstsr_val.py) script computes the AlignedPSNR score in the linear sensor space, before white-balancing or any intensity scaling. Since the RAW sensor values in the captured bursts are generally small (mean of around 0.1 - 0.2), the computed PSNR values are generally very high (> 47), since the maximum signal value in the PSNR computation is still assumed to be 1.0. In the ["Deep Burst Super-Resolution"](https://arxiv.org/pdf/2101.10997.pdf) paper, we computed the final scores on the white-balanced image, after scaling the image intensities to be between [0, 1]. Thus the scores computed by [evaluate_burstsr_val.py](scripts/evaluate_burstsr_val.py) cannot be compared with the scores reported in the paper.
+
+
+### Final Submission
+
+Final submission to the challenge we be done using the **test set**, which will be released at the start of the test phase. Participants will be asked to submit:
+
+* Predictions on the test set.
+* Code.
+* A fact sheet describing their method.
+
+Details will follow when the test phase starts ...
 
 
 ## Toolkit
