@@ -103,13 +103,16 @@ an example on how to save the results. An example submission file is available [
 
 ### Final Submission
 
-Final submission to the challenge we be done using the **test set**, which will be released at the start of the test phase. Participants will be asked to submit:
+The **test set** is now public. You can download the test set containing 500 synthetic bursts from [this link](https://data.vision.ee.ethz.ch/bhatg/track1_test_set.zip). You can use the dataset class provided in [synthetic_burst_test_set.py](datasets/synthetic_burst_test_set.py) in the latest commit to load the burst sequences.
 
-* Predictions on the test set.
-* Code.
-* A fact sheet describing their method.
+For the final submission, you need to submit:
+* The predicted outputs for each burst sequence as a zip folder, in the same format as used for uploading results to the codalab validation server (see [this](https://github.com/goutamgmb/NTIRE21_BURSTSR#validation) for details).
+* The code and model files necessary to reproduce your results.
+* A factsheet (both PDF and tex files) describing your method. The template for the factsheet is available [here](https://data.vision.ee.ethz.ch/bhatg/NTIRE_BURSTSR_TEMPLATE.zip).  
 
-Details will follow when the test phase starts ...
+The results, code, and factsheet should be submitted via the [google form](https://docs.google.com/forms/d/e/1FAIpQLSeil_Q3jrkcmy5ZmA3xEOW3-KzmA1Q0TFFU218JvRDopy_Jdg/viewform?usp=sf_link)
+
+**NOTE:** Training on the validation split is **NOT** allowed for test set submissions.
 
 ## Track 2 - Real-world
 This track deals with the problem of real-world burst super-resolution. For this purpose, 
@@ -173,13 +176,16 @@ NOTE: The [evaluate_burstsr_val.py](scripts/evaluate_burstsr_val.py) script comp
 
 ### Final Submission
 
-Final submission to the challenge we be done using the **test set**, which will be released at the start of the test phase. Participants will be asked to submit:
+The **test set** is now public. You can download the test set containing 639 real-world bursts from [this link](https://data.vision.ee.ethz.ch/bhatg/track2_test_set.zip). You can use the dataset class provided in [burstsr_test_dataset.py](datasets/burstsr_test_dataset.py) in the latest commit to load the burst sequences.
 
-* Predictions on the test set.
-* Code.
-* A fact sheet describing their method.
+For the final submission, you need to submit:
+* The predicted outputs for each burst sequence as a zip folder. The predictions must be normalized to the range [0, 2^14] and saved as 16 bit (uint16) png files. Please refer to [save_results_burstsr_test.py](scripts/save_results_burstsr_test.py) for an example on how to save the results.
+* The code and model files necessary to reproduce your results.
+* A factsheet (both PDF and tex files) describing your method. The template for the factsheet is available [here](https://data.vision.ee.ethz.ch/bhatg/NTIRE_BURSTSR_TEMPLATE.zip).  
 
-Details will follow when the test phase starts ...
+The results, code, and factsheet should be submitted via the [google form](https://docs.google.com/forms/d/e/1FAIpQLSeil_Q3jrkcmy5ZmA3xEOW3-KzmA1Q0TFFU218JvRDopy_Jdg/viewform?usp=sf_link)
+
+**NOTE:** Training on the validation split is **NOT** allowed for test set submissions.
 
 
 ## Toolkit
@@ -196,7 +202,10 @@ evaluation scripts. The toolkit contains the following modules.
       the RGB images Zurich RAW to RGB mapping dataset. This can be used along with SyntheticBurst dataset to generate synthetic bursts for training.  	
     * [synthetic_burst_val_set](datasets/synthetic_burst_val_set.py) can be used to load 
       the pre-generated synthetic validation set.
+    * [synthetic_burst_test_set](datasets/synthetic_burst_test_set.py) can be used to load 
+      the pre-generated synthetic test set.
     * [burstsr_dataset](datasets/burstsr_dataset.py) provides the BurstSRDataset class which can be used to load the RAW bursts and high-resolution ground truths for the real-world track.
+    * [burstsr_test_dataset](datasets/burstsr_test_dataset.py) provides the BurstSRTestDataset class which can be used to load the test split in the real-world track 2.
 * [pwcnet](pwcnet): The code for the optical flow network [PWC-Net](https://arxiv.org/abs/1811.11127) 
   borrowed from [pytorch-pwc](https://github.com/sniklaus/pytorch-pwc). The network weights can be 
   downloaded from [here](https://data.vision.ee.ethz.ch/bhatg/pwcnet-network-default.pth).
@@ -210,6 +219,8 @@ evaluation scripts. The toolkit contains the following modules.
     * [save_results_synburst_val](scripts/save_results_synburst_val.py) provides an example
       on how to save the results on [SyntheticBurstVal](datasets/synthetic_burst_val_set.py) 
       dataset for submission on the evaluation server.
+    * [save_results_burstsr_test](scripts/save_results_burstsr_test.py) provides an example
+      on how to save the results on the test set for the final submission for Track 2.
     * [evaluate_burstsr_val](scripts/evaluate_burstsr_val.py) provides an example on how
       to evaluate a method on the [BurstSR](datasets/burstsr_dataset.py) validation set.
 * [utils](utils): Contains the [AlignedPSNR](utils/metrics.py) metric, as well as other utility functions.
@@ -227,10 +238,15 @@ We provide the following data as part of the challenge.
 14 RAW images. The synthetic bursts are generated from the RGB images from the test split of the Zurich RAW to RGB mapping dataset. 
 The dataset can be downloaded from [here](https://data.vision.ee.ethz.ch/bhatg/syn_burst_val.zip).
 
+**Synthetic test set:** The official test set for track 1. The dataset contains 500 synthetic bursts, each containing 
+14 RAW images. The dataset can be downloaded from [here](https://data.vision.ee.ethz.ch/bhatg/track1_test_set.zip).
+
 **BurstSR train and validation set:** The training and validation set for track 2. 
 The dataset has been split into 10 parts and can be downloaded and unpacked using the 
 [download_burstsr_dataset.py](scripts/download_burstsr_dataset.py) script. In case of issues with the script, the download links 
 are available [here](burstsr_links.md).
+
+**BurstSR test set:** The test set for track 2. The dataset contains 639 bursts, each containing 14 RAW images. The dataset can be downloaded from [here](https://data.vision.ee.ethz.ch/bhatg/track2_test_set.zip).
 
 **Zurich RAW to RGB mapping set:** The RGB images from the training split of the 
 [Zurich RAW to RGB mapping dataset](http://people.ee.ethz.ch/~ihnatova/pynet.html#dataset) 
