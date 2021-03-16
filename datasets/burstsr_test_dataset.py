@@ -5,7 +5,7 @@ import random
 from .burstsr_dataset import SamsungRAWImage, flatten_raw_image, pack_raw_image
 
 
-class BurstSRDataset(torch.utils.data.Dataset):
+class BurstSRTestDataset(torch.utils.data.Dataset):
     """ Real-world burst super-resolution dataset. """
     def __init__(self, root, burst_size=8, crop_sz=80, center_crop=False, random_flip=False, split='test'):
         """
@@ -128,7 +128,7 @@ class BurstSRDataset(torch.utils.data.Dataset):
         burst = burst.float()
 
         meta_info_burst = burst_image_meta_info
-
+        meta_info_burst['burst_name'] = meta_info['burst_name']
         for k, v in meta_info_burst.items():
             if isinstance(v, (list, tuple)):
                 meta_info_burst[k] = torch.tensor(v)
