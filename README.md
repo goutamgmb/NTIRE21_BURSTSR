@@ -1,3 +1,5 @@
+**NOTE:** The inference code and pre-trained models for our work [Deep Burst Super-Resolution](https://arxiv.org/abs/2101.10997) is now available at [https://github.com/goutamgmb/deep-burst-sr](https://github.com/goutamgmb/deep-burst-sr).
+
 ## Table of contents 
 * [Introduction](#introduction)
 * [Reference](#reference)
