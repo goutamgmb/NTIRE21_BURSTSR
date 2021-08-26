@@ -252,6 +252,6 @@ def single2lrburst(image, burst_size, downsample_factor=1, transformation_params
     sample_pos_inv_all = torch.stack(sample_pos_inv_all)
 
     # Compute the flow vectors to go from the i'th burst image to the base image
-    flow_vectors = sample_pos_inv_all - sample_pos_inv_all[:, :1, ...]
+    flow_vectors = sample_pos_inv_all - sample_pos_inv_all[:1, ...]
 
     return burst_images, flow_vectors
