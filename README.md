@@ -238,25 +238,16 @@ We provide the following data as part of the challenge.
 
 **Synthetic validation set:** The official validation set for track 1. The dataset contains 300 synthetic bursts, each containing 
 14 RAW images. The synthetic bursts are generated from the RGB images from the test split of the Zurich RAW to RGB mapping dataset. 
-The dataset can be downloaded from [here](https://data.vision.ee.ethz.ch/bhatg/syn_burst_val.zip).
-
-**Synthetic test set:** The official test set for track 1. The dataset contains 500 synthetic bursts, each containing 
-14 RAW images. The dataset can be downloaded from [here](https://data.vision.ee.ethz.ch/bhatg/track1_test_set.zip).
+The dataset can be downloaded from [here]([https://data.vision.ee.ethz.ch/bhatg/syn_burst_val.zip](https://drive.google.com/file/d/1DHu3-_tGSc_8Wwwu6sHFaPtmd9ymd0rZ/view?usp=drive_link)).
 
 **BurstSR train and validation set:** The training and validation set for track 2. 
-The dataset has been split into 10 parts and can be downloaded and unpacked using the 
-[download_burstsr_dataset.py](scripts/download_burstsr_dataset.py) script. In case of issues with the script, the download links 
-are available [here](burstsr_links.md).
+The dataset has been split into 10 parts and can be downloaded from [here](https://drive.google.com/drive/folders/1A8FytFrYP-y7pZZhfFxVRzEPwcKl-Cp7?usp=drive_link)).
 
-**BurstSR test set:** The test set for track 2. The dataset contains 639 bursts, each containing 14 RAW images. The dataset can be downloaded from [here](https://data.vision.ee.ethz.ch/bhatg/track2_test_set.zip).
 
 **Zurich RAW to RGB mapping set:** The RGB images from the training split of the 
 [Zurich RAW to RGB mapping dataset](http://people.ee.ethz.ch/~ihnatova/pynet.html#dataset) 
-can be downloaded from [here](https://data.vision.ee.ethz.ch/bhatg/zurich-raw-to-rgb.zip). These RGB images can be 
+can be downloaded from [here]([https://data.vision.ee.ethz.ch/bhatg/zurich-raw-to-rgb.zip](https://drive.google.com/file/d/12L0LYhG78zQBLkIDyFNE5J6fIH02NUgz/view?usp=drive_link)). These RGB images can be 
 used to generate synthetic bursts for training using  the SyntheticBurst class.
-
-Additionally, the weights for the [PWC-Net](https://arxiv.org/abs/1811.11127) network used 
-in the evaluation for Track 2 can be downloaded from [here](https://data.vision.ee.ethz.ch/bhatg/pwcnet-network-default.pth).
 
 ## Issues and questions: 
 In case of any questions about the challenge or the toolkit, feel free to open an issue on Github.
